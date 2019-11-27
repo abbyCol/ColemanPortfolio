@@ -1,0 +1,222 @@
+* {
+    box-sizing: border-box;
+}
+
+html,
+body {
+    min-height: 100%;
+}
+
+body {
+    height: 100%;
+    background-image: url(../imgs/background02.png);
+    background-size: calc(1920px *3);
+}
+
+
+/*
+.scene {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+*/
+.header--custom {
+    display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.box {
+    width: 200px;
+    height: 200px;
+    background: white;
+    transition: transform 2s, background 2s;
+    margin-top: 200px;
+}
+
+.bigger {
+    width: 400px;
+    height: 400px;
+    border: 2px solid black;
+}
+
+.spin {
+    animation: spin;
+    animation-duration: 3s;
+}
+
+@keyframes spin {
+    from {
+        transform: rotate(0deg)
+    }
+
+    to {
+        transform: rotate(360deg)
+    }
+}
+
+header {
+    position: fixed;
+    top: 10px;
+    left: 10px;
+}
+
+section {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    color: #EFEFEF;
+}
+
+.full-screen {
+    display: flex;
+    width: 500vw;
+    max-width: calc(1920px *3);
+    max-height: 100%;
+    overflow: hidden;
+    height: 100%;
+    /* makes panels the entire window height */
+}
+
+.landing {
+    display: grid;
+    grid-template-columns: auto auto;
+    margin-left: -200px;
+    margin-top: 70px;
+    color: black;
+}
+
+.landing--items {
+    padding: 10px;
+}
+
+.title {
+    background-image: url(../imgs/title.png);
+    background-size: cover;
+    width: 350px;
+    height: 110px;
+    text-align: center;
+    color: white;
+    font-size: 25px;
+    font-family: 'Ringbearer';
+    padding-top: 17px;
+}
+
+@font-face {
+    font-family: "Ringbearer";
+    src: url("RINGM___.ttf") format("truetype");
+}
+
+.text {
+    width: 400px;
+    height: auto;
+    background-color: white;
+    padding: 30px;
+    font-family: 'Crimson Text', serif;
+    font-size: 19px;
+    text-align: justify;
+    color: black;
+}
+
+.start--text {
+    position: absolute;
+    margin-top: 420px;
+    margin-left: 150px;
+}
+
+.text--orc {
+    max-height: 400px;
+    grid-area: text--orc;
+    margin-bottom: -90px;
+}
+
+.landing--orc {
+    grid-template-areas:
+        "text--orc text--orc pic--orc pic--orc"
+        "title--orc title--orc pic--orc pic--orc"
+        "title--orc title--orc pic--orc pic--orc";
+}
+
+.title--orc {
+    grid-area: title--orc;
+    margin: -50px 0px 0px 25px;
+}
+
+.hobbit {
+    width: 550px;
+}
+
+.ring {
+    width: 500px;
+}
+
+.orc {
+    width: 500px;
+    margin-left: 50px;
+    grid-area: pic--orc;
+}
+
+.landing--orc {
+    grid-template-areas:
+        "text--orc text--orc pic--orc pic--orc"
+        "title--orc title--orc pic--orc pic--orc"
+        "title--orc title--orc pic--orc pic--orc";
+}
+
+.mountdoom {
+    width: 500px;
+    grid-area: mountdoom1;
+    margin-left: 50px;
+}
+
+.troll {
+    width: 900px;
+    grid-area: pic--troll;
+    margin-top: 80px;
+}
+
+.landing--troll {
+    "title--troll title--troll"
+    "pic--troll pic--troll";
+}
+
+.troll--title {
+    grid-area: title--troll;
+    margin: 0px 0px 0px 250px;
+}
+
+.start--title {
+    position: absolute;
+    margin-left: 400px;
+    margin-top: 220px;
+}
+
+.ring--title {
+    margin-left: 50px;
+    line-height: 70px;
+}
+
+.title--md {
+    line-height: 70px;
+    grid-area: mountdoom2;
+    margin-left: -70px;
+}
+
+.text--md {
+    grid-area: mountdoom3;
+    margin-top: 50px;
+    margin-left: 100px;
+}
+
+.empty--md {
+    grid-area: empty;
+}
+
+.landing--md {
+    grid-template-areas:
+        "mountdoom1 mountdoom1 empty"
+        "mountdoom1 mountdoom1 mountdoom2"
+        "mountdoom3 mountdoom3 mountdoom2"
+        "mountdoom3 mountdoom3 mountdoom2";
+}
