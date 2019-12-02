@@ -5,27 +5,47 @@
 html,
 body {
     min-height: 100%;
-}
-
-body {
-    height: 100%;
-    background-image: url(../imgs/background02.png);
     background-size: calc(1920px *3);
+    background-image: url(../imgs/smallerb.png);
 }
 
+.links--container {
+    display: flex;
+    flex-direction: row;
+    background-color: #666;
+    width: 100%;
+    padding-left: 45vw;
+}
+
+.links {
+    font-family: 'Ringbearer';
+    font-size: 25px;
+    color: white;
+    margin-right: 25px;
+}
+
+a.links {
+    text-decoration: none;
+}
+
+.header--custom {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 45px;
+}
+
+.anchor-nav {
+    padding: 30px 10px 10px 45%;
+    width: 100vw;
+}
+
+.anchor {
+    padding-right: 10px;
+}
 
 /*
-.scene {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-}
-*/
-.header--custom {
-    display: flex;
-  justify-content: center;
-  align-items: center;
-}
 .box {
     width: 200px;
     height: 200px;
@@ -33,7 +53,9 @@ body {
     transition: transform 2s, background 2s;
     margin-top: 200px;
 }
+*/
 
+/*
 .bigger {
     width: 400px;
     height: 400px;
@@ -54,11 +76,13 @@ body {
         transform: rotate(360deg)
     }
 }
+*/
 
 header {
     position: fixed;
     top: 10px;
-    left: 10px;
+    left: -10px;
+    padding: 10px;
 }
 
 section {
@@ -76,20 +100,22 @@ section {
     max-height: 100%;
     overflow: hidden;
     height: 100%;
-    /* makes panels the entire window height */
+    /*     makes panels the entire window height */
 }
 
 .landing {
     display: grid;
     grid-template-columns: auto auto;
     margin-left: -200px;
-    margin-top: 70px;
+    margin-top: 10vh;
     color: black;
 }
 
+/*
 .landing--items {
     padding: 10px;
 }
+*/
 
 .title {
     background-image: url(../imgs/title.png);
@@ -109,26 +135,46 @@ section {
 }
 
 .text {
-    width: 400px;
-    height: auto;
+    max-width: 400px;
+    min-height: 100px;
     background-color: white;
     padding: 30px;
     font-family: 'Crimson Text', serif;
-    font-size: 19px;
+    font-size: 18px;
     text-align: justify;
     color: black;
 }
 
-.start--text {
+.text--start {
+    grid-area: textH;
     position: absolute;
     margin-top: 420px;
     margin-left: 150px;
 }
 
+.title--start {
+    grid-area: titleH;
+    position: absolute;
+    margin-left: 400px;
+    margin-top: 220px;
+}
+
+.hobbit {
+    grid-area: picH;
+    width: 550px;
+}
+
 .text--orc {
-    max-height: 400px;
+    width: 300px;
     grid-area: text--orc;
-    margin-bottom: -90px;
+    margin: 0px -50px 0px 50px;
+    height: 330px;
+}
+
+.landing--hobbit {
+    grid-template-areas:
+        "picH picH textH"
+        "titleH titleH textH";
 }
 
 .landing--orc {
@@ -140,20 +186,38 @@ section {
 
 .title--orc {
     grid-area: title--orc;
-    margin: -50px 0px 0px 25px;
-}
-
-.hobbit {
-    width: 550px;
+    margin-top: 40px;
 }
 
 .ring {
     width: 500px;
+    grid-area: picR;
+    margin: 50px 0px;
+}
+
+.title--ring {
+    grid-area: titleR;
+    margin-left: 70px;
+    margin-top: -80px;
+    line-height: 70px;
+}
+
+.text--ring {
+    grid-area: textR;
+    margin: 50px 25px;
+    max-width: 250px;
+}
+
+.landing--ring {
+    grid-template-areas:
+        "textR picR picR"
+        "textR picR picR"
+        "textR titleR titleR";
 }
 
 .orc {
-    width: 500px;
-    margin-left: 50px;
+    width: 400px;
+    margin-left: 20px;
     grid-area: pic--orc;
 }
 
@@ -172,8 +236,8 @@ section {
 
 .troll {
     width: 900px;
+    margin-top: 40px;
     grid-area: pic--troll;
-    margin-top: 80px;
 }
 
 .landing--troll {
@@ -183,18 +247,7 @@ section {
 
 .troll--title {
     grid-area: title--troll;
-    margin: 0px 0px 0px 250px;
-}
-
-.start--title {
-    position: absolute;
-    margin-left: 400px;
-    margin-top: 220px;
-}
-
-.ring--title {
-    margin-left: 50px;
-    line-height: 70px;
+    margin: -20px 0px 0px 320px;
 }
 
 .title--md {
@@ -205,6 +258,7 @@ section {
 
 .text--md {
     grid-area: mountdoom3;
+    width: 450px;
     margin-top: 50px;
     margin-left: 100px;
 }
@@ -219,4 +273,105 @@ section {
         "mountdoom1 mountdoom1 mountdoom2"
         "mountdoom3 mountdoom3 mountdoom2"
         "mountdoom3 mountdoom3 mountdoom2";
+}
+
+.landing--about {
+    display: flex;
+    flex-direction: column;
+    margin-left: 34vw;
+}
+
+.title--about {
+    margin: 25px;
+    line-height: 70px;
+}
+
+.text--about {}
+
+
+/*
+/////
+///                    https://codepen.io/niallains/pen/dxbOyX
+/////
+*/
+
+body > button {
+    display: block;
+    min-width: 150px;
+}
+
+button {
+    display: inline;
+    background-color: white;
+    font-family: 'Crimson Text', serif;
+    font-size: 18px;
+    text-align: justify;
+    color: black;
+    font-weight: 600;
+    border: 1px solid white;
+}
+
+button:hover {
+    cursor: pointer;
+}
+
+/* Overlay Styles */
+.overlayBg {
+    position: fixed;
+    left: 0;
+    top: 0;
+    z-index: 5;
+    width: 100vw;
+    height: 100vh;
+    display: none;
+}
+
+.overlayBg.open {
+    display: block;
+}
+
+[overlay] {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    z-index: 10;
+    transform: translate(-50%, -50%);
+    width: 250px;
+    padding: 30px;
+    background-color: white;
+    background-image: url(../imgs/paper.jpg);
+    background-size: cover;
+    background-position: center;
+    box-shadow: 0 3px 5px #0005;
+    visibility: hidden;
+    opacity: 0;
+    transition:
+        visibility 0s linear 0.2s,
+        opacity 0.2s,
+        transform 0.2s;
+}
+
+[overlay].open {
+    visibility: visible;
+    opacity: 1;
+    transition:
+        opacity 0.5s,
+        transform 0.5s;
+}
+
+[overlay] button.close {
+    background: none;
+    border: none;
+    position: absolute;
+    right: 0;
+    top: 0;
+    font-size: 24px;
+    color: black;
+    cursor: pointer;
+    outline: none;
+}
+
+[overlay] button.close:hover,
+[overlay] button.close:focus {
+    color: black;
 }
