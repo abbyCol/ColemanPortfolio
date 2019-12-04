@@ -2,11 +2,14 @@
     box-sizing: border-box;
 }
 
-html,
+html {
+    scroll-behavior: smooth;
+}
+
 body {
     min-height: 100%;
-    background-size: calc(1920px *3);
-    background-image: url(../imgs/smallerb.png);
+    background-size: calc(1920px *6);
+    background-image: url(../imgs/bckgrd.png);
 }
 
 .links--container {
@@ -14,8 +17,32 @@ body {
     flex-direction: row;
     background-color: #666;
     width: 100%;
-    padding-left: 45vw;
+    padding-left: 30vw;
+    padding-top: 5px;
 }
+
+.about--links {
+    margin-left: 15%;
+}
+
+.home--links {
+    margin-left: 13%;
+}
+
+/*///////////////////////////////////*/
+
+.landing--about {
+    display: flex;
+    justify-content: center;
+    padding-left: 15vw;
+}
+
+.title--about {
+    margin: 25px;
+    line-height: 70px;
+}
+
+/*///////////////////////////////////*/
 
 .links {
     font-family: 'Ringbearer';
@@ -45,39 +72,6 @@ a.links {
     padding-right: 10px;
 }
 
-/*
-.box {
-    width: 200px;
-    height: 200px;
-    background: white;
-    transition: transform 2s, background 2s;
-    margin-top: 200px;
-}
-*/
-
-/*
-.bigger {
-    width: 400px;
-    height: 400px;
-    border: 2px solid black;
-}
-
-.spin {
-    animation: spin;
-    animation-duration: 3s;
-}
-
-@keyframes spin {
-    from {
-        transform: rotate(0deg)
-    }
-
-    to {
-        transform: rotate(360deg)
-    }
-}
-*/
-
 header {
     position: fixed;
     top: 10px;
@@ -90,13 +84,11 @@ section {
     justify-content: center;
     align-items: center;
     text-align: center;
-    color: #EFEFEF;
 }
 
 .full-screen {
     display: flex;
     width: 500vw;
-    max-width: calc(1920px *3);
     max-height: 100%;
     overflow: hidden;
     height: 100%;
@@ -105,17 +97,11 @@ section {
 
 .landing {
     display: grid;
-    grid-template-columns: auto auto;
+    /*    grid-template-columns: auto auto;*/
     margin-left: -200px;
     margin-top: 10vh;
     color: black;
 }
-
-/*
-.landing--items {
-    padding: 10px;
-}
-*/
 
 .title {
     background-image: url(../imgs/title.png);
@@ -131,7 +117,7 @@ section {
 
 @font-face {
     font-family: "Ringbearer";
-    src: url("RINGM___.ttf") format("truetype");
+    src: url("../fonts/RINGM___.ttf") format("truetype");
 }
 
 .text {
@@ -143,6 +129,17 @@ section {
     font-size: 18px;
     text-align: justify;
     color: black;
+}
+
+/*//////////////////////////////*/
+
+.landing--hobbit {
+    grid-template-areas: "picH picH textH""titleH titleH textH";
+}
+
+.hobbit {
+    grid-area: picH;
+    width: 550px;
 }
 
 .text--start {
@@ -157,110 +154,186 @@ section {
     position: absolute;
     margin-left: 400px;
     margin-top: 220px;
+    animation-name: titlefloat;
+    animation-duration: 2s;
+    animation-iteration-count: infinite;
 }
 
-.hobbit {
-    grid-area: picH;
-    width: 550px;
+@keyframes titlefloat {
+    0% {
+        transform: translateY(10px)
+    }
+
+    50% {
+        transform: translateY(0px)
+    }
+
+    100% {
+        transform: translateY(10px)
+    }
+}
+
+/*//////////////////////////////*/
+
+.landing--orc {
+    grid-template-areas: "text--orc text--orc pic--orc pic--orc""title--orc title--orc pic--orc pic--orc""title--orc title--orc pic--orc pic--orc";
 }
 
 .text--orc {
     width: 300px;
     grid-area: text--orc;
     margin: 0px -50px 0px 50px;
-    height: 330px;
-}
-
-.landing--hobbit {
-    grid-template-areas:
-        "picH picH textH"
-        "titleH titleH textH";
-}
-
-.landing--orc {
-    grid-template-areas:
-        "text--orc text--orc pic--orc pic--orc"
-        "title--orc title--orc pic--orc pic--orc"
-        "title--orc title--orc pic--orc pic--orc";
+    height: 380px;
 }
 
 .title--orc {
     grid-area: title--orc;
     margin-top: 40px;
+    margin-right: 90px;
+    animation-name: orctitle;
+    animation-duration: 3s;
+    animation-iteration-count: infinite;
 }
+
+@keyframes orctitle {
+    0% {
+        transform: translateY(10px)
+    }
+
+    50% {
+        transform: translateY(0px)
+    }
+
+    100% {
+        transform: translateY(10px)
+    }
+}
+
+.orc {
+    width: 400px;
+    grid-area: pic--orc;
+    margin-right: -50px;
+}
+
+.landing--orc {
+    grid-template-areas: "text--orc text--orc pic--orc pic--orc""title--orc title--orc pic--orc pic--orc""title--orc title--orc pic--orc pic--orc";
+}
+
+/*//////////////////////////////*/
 
 .ring {
     width: 500px;
     grid-area: picR;
-    margin: 50px 0px;
+    margin: 50px 50px 0px 50px;
 }
 
 .title--ring {
     grid-area: titleR;
-    margin-left: 70px;
+    margin-left: 120px;
     margin-top: -80px;
     line-height: 70px;
+    animation-name: ringtitle;
+    animation-duration: 3s;
+    animation-iteration-count: infinite;
+}
+
+@keyframes ringtitle {
+    0% {
+        transform: translateY(10px)
+    }
+
+    50% {
+        transform: translateY(0px)
+    }
+
+    100% {
+        transform: translateY(10px)
+    }
 }
 
 .text--ring {
     grid-area: textR;
     margin: 50px 25px;
+    margin-left: 70px;
     max-width: 250px;
 }
 
 .landing--ring {
-    grid-template-areas:
-        "textR picR picR"
-        "textR picR picR"
-        "textR titleR titleR";
+    grid-template-areas: "textR picR picR""textR picR picR""textR titleR titleR";
 }
 
-.orc {
-    width: 400px;
-    margin-left: 20px;
-    grid-area: pic--orc;
-}
-
-.landing--orc {
-    grid-template-areas:
-        "text--orc text--orc pic--orc pic--orc"
-        "title--orc title--orc pic--orc pic--orc"
-        "title--orc title--orc pic--orc pic--orc";
-}
-
-.mountdoom {
-    width: 500px;
-    grid-area: mountdoom1;
-    margin-left: 50px;
-}
+/*//////////////////////////////*/
 
 .troll {
     width: 900px;
-    margin-top: 40px;
+    margin-top: -40px;
     grid-area: pic--troll;
 }
 
 .landing--troll {
-    "title--troll title--troll"
-    "pic--troll pic--troll";
+    margin-left: 0px;
+    grid-template-areas:
+        "title--troll title--troll""pic--troll pic--troll";
 }
 
 .troll--title {
     grid-area: title--troll;
-    margin: -20px 0px 0px 320px;
+    margin: -20px 0px 0px 300px;
+    animation-name: trolltitle;
+    animation-duration: 3s;
+    animation-iteration-count: infinite;
+}
+
+@keyframes trolltitle {
+    0% {
+        transform: translateY(10px)
+    }
+
+    50% {
+        transform: translateY(0px)
+    }
+
+    100% {
+        transform: translateY(10px)
+    }
+}
+
+/*//////////////////////////////*/
+
+.mountdoom {
+    width: 500px;
+    grid-area: mountdoom1;
+    margin-left: 300px;
 }
 
 .title--md {
     line-height: 70px;
     grid-area: mountdoom2;
     margin-left: -70px;
+    animation-name: mdtitle;
+    animation-duration: 3s;
+    animation-iteration-count: infinite;
+}
+
+@keyframes mdtitle {
+    0% {
+        transform: translateY(10px)
+    }
+
+    50% {
+        transform: translateY(0px)
+    }
+
+    100% {
+        transform: translateY(10px)
+    }
 }
 
 .text--md {
     grid-area: mountdoom3;
     width: 450px;
     margin-top: 50px;
-    margin-left: 100px;
+    margin-left: 400px;
 }
 
 .empty--md {
@@ -268,31 +341,19 @@ section {
 }
 
 .landing--md {
-    grid-template-areas:
-        "mountdoom1 mountdoom1 empty"
-        "mountdoom1 mountdoom1 mountdoom2"
-        "mountdoom3 mountdoom3 mountdoom2"
-        "mountdoom3 mountdoom3 mountdoom2";
+    grid-template-areas: "mountdoom1 mountdoom1 empty""mountdoom1 mountdoom1 mountdoom2""mountdoom3 mountdoom3 mountdoom2""mountdoom3 mountdoom3 mountdoom2";
 }
 
-.landing--about {
-    display: flex;
-    flex-direction: column;
-    margin-left: 34vw;
-}
+/*//////////////////////////////*/
+/*//////////////////////////////*/
 
-.title--about {
-    margin: 25px;
-    line-height: 70px;
-}
-
-.text--about {}
-
+/*//////////////////////////////*/
+/*//////////////////////////////*/
 
 /*
 /////
 ///                    https://codepen.io/niallains/pen/dxbOyX
-/////
+/////                 pop up information
 */
 
 body > button {
@@ -316,6 +377,7 @@ button:hover {
 }
 
 /* Overlay Styles */
+
 .overlayBg {
     position: fixed;
     left: 0;
@@ -336,27 +398,21 @@ button:hover {
     left: 50%;
     z-index: 10;
     transform: translate(-50%, -50%);
-    width: 250px;
-    padding: 30px;
+    max-width: 500px;
+    padding: 20px;
     background-color: white;
     background-image: url(../imgs/paper.jpg);
     background-size: cover;
     background-position: center;
-    box-shadow: 0 3px 5px #0005;
     visibility: hidden;
     opacity: 0;
-    transition:
-        visibility 0s linear 0.2s,
-        opacity 0.2s,
-        transform 0.2s;
+    transition: visibility 0s linear 0.2s, opacity 0.2s, transform 0.2s;
 }
 
 [overlay].open {
     visibility: visible;
     opacity: 1;
-    transition:
-        opacity 0.5s,
-        transform 0.5s;
+    transition: opacity 0.5s, transform 0.5s;
 }
 
 [overlay] button.close {
@@ -375,3 +431,9 @@ button:hover {
 [overlay] button.close:focus {
     color: black;
 }
+
+/*
+//////////
+/////////
+//////////
+*/

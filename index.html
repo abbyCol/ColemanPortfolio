@@ -4,8 +4,9 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>scroll magic test</title>
+    <title>adventure awaits</title>
     <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/hover.css">
     <link href="https://fonts.googleapis.com/css?family=Crimson+Text&display=swap" rel="stylesheet">
 </head>
 
@@ -14,30 +15,32 @@
     <div class="header--custom">
         <header role="banner">
             <div class="links--container">
-                <a href="index.html" class="links">Home</a>
+                <a href="index.html" class="links home--links">the tale of hobbits</a>
                 <a href="about.html" class="links">About</a>
             </div>
             <nav class="anchor-nav" role="navigation">
-                <a href="#intro" id="intro-anchor" class="anchor"><img src="imgs/circle.png"></a>
-                <a href="#section-1" id="anchor1" class="anchor"><img src="imgs/circle.png"></a>
-                <a href="#section-2" id="anchor2" class="anchor"><img src="imgs/circle.png"></a>
-                <a href="#section-3" id="anchor3" class="anchor"><img src="imgs/circle.png"></a>
-                <a href="#section-4" id="anchor4" class="anchor"><img src="imgs/circle.png"></a>
+                <a href="#intro" id="intro-anchor" class="anchor hvr-grow-shadow"><img src="imgs/circle.png"></a>
+                <a href="#section-1" id="anchor1" class="anchor hvr-grow-shadow"><img src="imgs/circle.png"></a>
+                <a href="#section-2" id="anchor2" class="anchor hvr-grow-shadow"><img src="imgs/circle.png"></a>
+                <a href="#section-3" id="anchor3" class="anchor hvr-grow-shadow"><img src="imgs/circle.png"></a>
+                <a href="#section-4" id="anchor4" class="anchor hvr-grow-shadow"><img src="imgs/circle.png"></a>
             </nav>
         </header>
     </div>
 
-    <main class="full-screen" id="intro" role="main">
-        <section class="full-screen" id="start">
+    <main class="full-screen" role="main">
+        <section class="full-screen" id="intro">
             <div class="landing landing--hobbit" id="box1">
-                <div class="title title--start">enter into <br>the Shire</div>
+                <div class="title title--start" id="">Hobbiton: <br>the Shire</div>
                 <img src="imgs/hobbiton.jpeg" class="hobbit">
                 <div class="text text--start">
 
-                    <div overlay="overlay_one">Bilbo Baggins was recruited by Thorin and company in order to complete the Quest of Erebor, which led to the Battle of the Five Armies. He was a bearer of the One Ring but voluntarily gave it up.</div>
+                    <div overlay="overlay_one">Bilbo Baggins was recruited by Thorin and company in order to complete the Quest of Erebor, which led to the Battle of the Five Armies. He was a bearer of the One Ring but voluntarily gave it up.<br><br>‘It’s a dangerous business, Frodo, going out your door. You step onto the road, and if you don’t keep your feet, there’s no knowing where you might be swept off to.’ – Bilbo Baggins</div>
                     <div overlay="overlay_two">Frodo Baggins was the next bearer of the Ring. He was sent on a mission to destroy it, and he took his friends Sam, Merry, and Pippin along with him.</div>
 
-                    Enter into the glorious home of the hobbits, Hobbiton. Here you will find more meals than one could stuff in their belly and the friendly -- judgemental -- companionship from the other hobbits. <button onclick="openOverlay('overlay_one')"> Bilbo Baggins</button> of Bag End lived here, as well as his nephew <button onclick="openOverlay('overlay_two')"> Frodo Baggins </button>.
+                    Enter into the beautiful home of the hobbits, Hobbiton. Here you will find more meals than one could stuff in their belly and the friendly -- judgemental -- companionship from the other hobbits. <button onclick="openOverlay('overlay_one')"> Bilbo Baggins</button> of Bag End lived here, as well as his nephew <button onclick="openOverlay('overlay_two')"> Frodo Baggins </button>.
+                    <br><br>
+                    Gandalf finds them both here to lead them on their adventures.
 
                 </div>
             </div>
@@ -59,7 +62,7 @@
             <div class="landing landing--orc">
                 <div class="text text--orc">
 
-                    Orcs were created by torturing elves who had wicked intentions. They were created by the first Dark Lord, Morgoth, to dominate the middle earth. Surviving in deep caves and pits they multiply to do the bidding of evil forces. They destroy the world that they live in as violence is their nature. Notable orcs are Azgog and the Pale Orc.
+                    Orcs were created by torturing elves who had wicked intentions. They were created by the first Dark Lord, Morgoth, to dominate the middle earth. Surviving in deep caves and pits they multiply to do the bidding of evil forces. They destroy the world that they live in as violence is their nature. Notable orcs are Azgog and the Pale Orc. These orcs hunt down the protagonists throughout all of the novels.
 
                 </div>
                 <img src="imgs/orc.jpeg" class="orc">
@@ -70,7 +73,9 @@
         <section class="full-screen" id="section-3">
             <div class="landing landing--troll">
 
-                <img src="imgs/troll.jpeg" class="troll">
+                <div overlay="overlay_four"><iframe width="450" height="250" src="https://www.youtube-nocookie.com/embed/5ayH3BtNjNE?controls=0" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe></div>
+
+                <button onclick="openOverlay('overlay_four')"><img src="imgs/troll.jpeg" class="troll"></button>
                 <div class="title troll--title">Trolls Cooking<br>Dwarves</div>
 
             </div>
@@ -80,7 +85,11 @@
             <div class="landing landing--md">
                 <img src="imgs/mount%20doom.jpeg" class="mountdoom">
                 <div class="title title--md">Mount Doom</div>
-                <div class="text text--md">Mount Doom, the volcano where the One Ring was forged. The end destination for the ring to be destroyed by Frodo Baggins and Samwise Gamgee. Mount Doom is portrayed as the volcano called Mount Ngauruhoe. This is a location in New Zealand, the movie portrayed it as a model or a long shot as filming the summit is not permitted as it is sacred grounds to New Zealand people.</div>
+                <div class="text text--md">
+                    <div overlay="overlay_five">‘But in the end it’s only a passing thing, this shadow; even darkness must pass.’ – Samwise Gamgee</div>
+
+                    Mount Doom, the volcano where the One Ring was forged. The end destination for the ring to be destroyed by Frodo Baggins and <button onclick="openOverlay('overlay_five')">Samwise Gamgee.</button> Mount Doom is portrayed as the volcano called Mount Ngauruhoe. This is a location in New Zealand, the movie portrayed it as a model or a long shot as filming the summit is not permitted as it is sacred grounds to New Zealand people.
+                </div>
             </div>
         </section>
     </main>
@@ -93,8 +102,11 @@
     <script src="//cdnjs.cloudflare.com/ajax/libs/ScrollMagic/2.0.7/plugins/debug.addIndicators.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/ScrollMagic/2.05/plugins/animation.gsap.js"></script>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.4/jquery.min.js"></script>
-    <script src="http://cdnjs.cloudflare.com/ajax/libs/modernizr/2.8.3/modernizr.js"></script>
+
+    <!--    <script src="http://cdnjs.cloudflare.com/ajax/libs/modernizr/2.8.3/modernizr.js"></script>-->
     <script src="js/scripts.js"></script>
     <script src="js/extra.js"></script>
-    <script src="https://code.jquery.com/jquery-3.4.1.min.js" integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo=" crossorigin="anonymous"></script>
-</body></html>
+    <!--    <script src="https://code.jquery.com/jquery-3.4.1.min.js" integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo=" crossorigin="anonymous"></script>-->
+</body>
+
+</html>
