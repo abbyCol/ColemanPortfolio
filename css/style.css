@@ -6,27 +6,25 @@ html {
     scroll-behavior: smooth;
 }
 
-body {
-    min-height: 100%;
-    background-size: calc(1920px *6);
-    background-image: url(../imgs/bckgrd.png);
+body,
+html {
+    height: 100%;
+    background-color: dimgrey;
 }
 
-.links--container {
-    display: flex;
-    flex-direction: row;
-    background-color: #666;
-    width: 100%;
-    padding-left: 30vw;
-    padding-top: 5px;
-}
+.parallax {
+    /* The image used */
+    background-image: url(../imgs/flower.JPG);
+    /* Full height */
+    height: 100%;
+    width: 100vw;
+    margin: -10px 0px 0px -10px;
 
-.about--links {
-    margin-left: 15%;
-}
-
-.home--links {
-    margin-left: 13%;
+    /* Create the parallax scrolling effect */
+    background-attachment: fixed;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
 }
 
 /*///////////////////////////////////*/
@@ -40,6 +38,14 @@ body {
 .title--about {
     margin: 25px;
     line-height: 70px;
+}
+
+.titletag {
+    width: 400px;
+    height: 200px;
+    background-color: white;
+    position: absolute;
+    top: -50%;
 }
 
 /*///////////////////////////////////*/
@@ -96,6 +102,7 @@ section {
 }
 
 .landing {
+    height: 700px;
     display: grid;
     /*    grid-template-columns: auto auto;*/
     margin-left: -200px;
@@ -111,8 +118,8 @@ section {
     text-align: center;
     color: white;
     font-size: 25px;
-    font-family: 'Ringbearer';
-    padding-top: 17px;
+    font-family: 'Crimson Text', serif;
+    padding-top: 13px;
 }
 
 @font-face {
@@ -131,11 +138,17 @@ section {
     color: black;
 }
 
+.text--title {
+    margin-left: 50%;
+}
+
 /*//////////////////////////////*/
 
+/*
 .landing--hobbit {
     grid-template-areas: "picH picH textH""titleH titleH textH";
 }
+*/
 
 .hobbit {
     grid-area: picH;
@@ -150,6 +163,30 @@ section {
 }
 
 .title--start {
+    grid-area: titleH;
+    position: absolute;
+    margin-left: 400px;
+    margin-top: 220px;
+    animation-name: titlefloat;
+    animation-duration: 2s;
+    animation-iteration-count: infinite;
+}
+
+@keyframes titlefloat {
+    0% {
+        transform: translateY(10px)
+    }
+
+    50% {
+        transform: translateY(0px)
+    }
+
+    100% {
+        transform: translateY(10px)
+    }
+}
+
+.title--parallax {
     grid-area: titleH;
     position: absolute;
     margin-left: 400px;
@@ -345,95 +382,9 @@ section {
 }
 
 /*//////////////////////////////*/
-/*//////////////////////////////*/
-
-/*//////////////////////////////*/
-/*//////////////////////////////*/
-
-/*
-/////
-///                    https://codepen.io/niallains/pen/dxbOyX
-/////                 pop up information
-*/
-
-body > button {
-    display: block;
-    min-width: 150px;
+/* Turn off parallax scrolling for all tablets and phones. Increase/decrease the pixels if needed */
+@media only screen and (max-device-width: 1366px) {
+    .parallax {
+        background-attachment: scroll;
+    }
 }
-
-button {
-    display: inline;
-    background-color: white;
-    font-family: 'Crimson Text', serif;
-    font-size: 18px;
-    text-align: justify;
-    color: black;
-    font-weight: 600;
-    border: 1px solid white;
-}
-
-button:hover {
-    cursor: pointer;
-}
-
-/* Overlay Styles */
-
-.overlayBg {
-    position: fixed;
-    left: 0;
-    top: 0;
-    z-index: 5;
-    width: 100vw;
-    height: 100vh;
-    display: none;
-}
-
-.overlayBg.open {
-    display: block;
-}
-
-[overlay] {
-    position: fixed;
-    top: 50%;
-    left: 50%;
-    z-index: 10;
-    transform: translate(-50%, -50%);
-    max-width: 500px;
-    padding: 20px;
-    background-color: white;
-    background-image: url(../imgs/paper.jpg);
-    background-size: cover;
-    background-position: center;
-    visibility: hidden;
-    opacity: 0;
-    transition: visibility 0s linear 0.2s, opacity 0.2s, transform 0.2s;
-}
-
-[overlay].open {
-    visibility: visible;
-    opacity: 1;
-    transition: opacity 0.5s, transform 0.5s;
-}
-
-[overlay] button.close {
-    background: none;
-    border: none;
-    position: absolute;
-    right: 0;
-    top: 0;
-    font-size: 24px;
-    color: black;
-    cursor: pointer;
-    outline: none;
-}
-
-[overlay] button.close:hover,
-[overlay] button.close:focus {
-    color: black;
-}
-
-/*
-//////////
-/////////
-//////////
-*/
