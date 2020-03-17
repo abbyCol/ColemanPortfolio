@@ -10,11 +10,12 @@ body,
 html {
     height: 100%;
     background-color: dimgrey;
+    background-image: url(../imgs/dot-grid.png);
 }
 
 .parallax {
     /* The image used */
-    background-image: url(../imgs/flower.JPG);
+    /*    background-image: url(../imgs/flower.JPG);*/
     /* Full height */
     height: 100%;
     width: 100vw;
@@ -98,6 +99,7 @@ section {
     max-height: 100%;
     overflow: hidden;
     height: 100%;
+/*    background-color: lightgrey;*/
     /*     makes panels the entire window height */
 }
 
@@ -128,14 +130,17 @@ section {
 }
 
 .text {
+/*
     max-width: 400px;
     min-height: 100px;
+*/
     background-color: white;
     padding: 30px;
     font-family: 'Crimson Text', serif;
     font-size: 18px;
     text-align: justify;
     color: black;
+    border: 1px solid lightgrey;
 }
 
 .text--title {
@@ -152,21 +157,26 @@ section {
 
 .hobbit {
     grid-area: picH;
-    width: 550px;
+    width: 580px;
+    transform: rotate(-90deg);
+    margin: 0px -0px 0px -250px;
 }
 
 .text--start {
     grid-area: textH;
     position: absolute;
-    margin-top: 420px;
-    margin-left: 150px;
+    margin-top: 250px;
+    margin-left: 270px;
+    height: 390px;
+    overflow: auto;
+    width: 450px;
 }
 
 .title--start {
     grid-area: titleH;
     position: absolute;
-    margin-left: 400px;
-    margin-top: 220px;
+    margin-left: 315px;
+    margin-top: 100px;
     animation-name: titlefloat;
     animation-duration: 2s;
     animation-iteration-count: infinite;
@@ -219,14 +229,15 @@ section {
 .text--orc {
     width: 300px;
     grid-area: text--orc;
-    margin: 0px -50px 0px 50px;
+    margin: 0px 0px 0px 50px;
     height: 380px;
+    overflow: auto;
 }
 
 .title--orc {
     grid-area: title--orc;
     margin-top: 40px;
-    margin-right: 90px;
+    margin-right: 100px;
     animation-name: orctitle;
     animation-duration: 3s;
     animation-iteration-count: infinite;
@@ -247,9 +258,13 @@ section {
 }
 
 .orc {
-    width: 400px;
+    width: 600px;
+    margin-left: -50px;
     grid-area: pic--orc;
-    margin-right: -50px;
+}
+
+.web--two {
+    width: 500px;
 }
 
 .landing--orc {
@@ -259,14 +274,14 @@ section {
 /*//////////////////////////////*/
 
 .ring {
-    width: 500px;
+    width: 700px;
     grid-area: picR;
-    margin: 50px 50px 0px 50px;
+margin-right: -150px
 }
 
 .title--ring {
     grid-area: titleR;
-    margin-left: 120px;
+    margin-left: 170px;
     margin-top: -80px;
     line-height: 70px;
     animation-name: ringtitle;
@@ -290,9 +305,10 @@ section {
 
 .text--ring {
     grid-area: textR;
-    margin: 50px 25px;
-    margin-left: 70px;
-    max-width: 250px;
+    width: 350px;
+    max-height: 450px;
+    overflow: auto;
+    margin-right: 50px;
 }
 
 .landing--ring {
@@ -315,7 +331,7 @@ section {
 
 .troll--title {
     grid-area: title--troll;
-    margin: -20px 0px 0px 300px;
+    margin: -70px 0px 0px 300px;
     animation-name: trolltitle;
     animation-duration: 3s;
     animation-iteration-count: infinite;
@@ -371,6 +387,8 @@ section {
     width: 450px;
     margin-top: 50px;
     margin-left: 400px;
+    height: 200px;
+    overflow: auto;
 }
 
 .empty--md {
@@ -387,4 +405,118 @@ section {
     .parallax {
         background-attachment: scroll;
     }
+}
+
+
+/*//////////////////////////////*/
+/*//////////////////////////////*/
+/*//////////////////////////////*/
+/*//////////////////////////////*/
+
+/* Slideshow container */
+.slideshow-container {
+    max-width: 1000px;
+    position: relative;
+    margin: auto;
+}
+
+/* Hide the images by default */
+.mySlides {
+    display: none;
+}
+
+/* Next & previous buttons */
+.prev,
+.next {
+    cursor: pointer;
+    position: absolute;
+    top: 50%;
+    width: auto;
+    margin-top: -22px;
+    padding: 16px;
+    color: white;
+    font-weight: bold;
+    font-size: 18px;
+    transition: 0.6s ease;
+    border-radius: 0 3px 3px 0;
+    user-select: none;
+}
+
+/* Position the "next button" to the right */
+.next {
+    right: 0;
+    border-radius: 3px 0 0 3px;
+}
+
+.prev {
+    left: 0;
+    border-radius: 3px 0 0 3px;
+}
+
+/* On hover, add a black background color with a little bit see-through */
+/*
+.prev:hover,
+.next:hover {
+    background-color: rgba(0, 0, 0, 0.8);
+}
+*/
+
+
+/* Number text (1/3 etc) */
+.numbertext {
+    color: #f2f2f2;
+    font-size: 12px;
+    padding: 8px 12px;
+    position: absolute;
+    top: 0;
+}
+
+/* The dots/bullets/indicators */
+.dot {
+    cursor: pointer;
+    height: 15px;
+    width: 15px;
+    margin: 0 2px;
+    background-color: #bbb;
+    border-radius: 50%;
+    display: inline-block;
+    transition: background-color 0.6s ease;
+}
+
+.active,
+.dot:hover {
+    background-color: #717171;
+}
+
+/* Fading animation */
+.fade {
+    -webkit-animation-name: fade;
+    -webkit-animation-duration: 1.5s;
+    animation-name: fade;
+    animation-duration: 1.5s;
+}
+
+@-webkit-keyframes fade {
+    from {
+        opacity: .4
+    }
+
+    to {
+        opacity: 1
+    }
+}
+
+@keyframes fade {
+    from {
+        opacity: .4
+    }
+
+    to {
+        opacity: 1
+    }
+}
+
+.slideshow {
+    width: 1000px;
+    height: 600px;
 }

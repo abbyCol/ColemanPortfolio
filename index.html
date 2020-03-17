@@ -12,22 +12,36 @@
 
 <body>
 
+    <!--
     <div class="parallax">
 
         <div class="title title--parallax" style="margin: 30vh; line-height: 3;">Abby Coleman</div>
         <div class="title title--parallax" style="margin: 45vh; line-height: 3">Portfolio 2020</div>
 
     </div>
+-->
 
     <!--    <div class="titletag"></div>-->
     <!--    <div class="header--custom">-->
     <header role="banner">
         <nav class="anchor-nav" role="navigation">
-            <a href="#intro" id="intro-anchor" class="anchor hvr-grow-shadow"><img src="imgs/circle.png"></a>
-            <a href="#section-1" id="anchor1" class="anchor hvr-grow-shadow"><img src="imgs/circle.png"></a>
-            <a href="#section-2" id="anchor2" class="anchor hvr-grow-shadow"><img src="imgs/circle.png"></a>
-            <a href="#section-3" id="anchor3" class="anchor hvr-grow-shadow"><img src="imgs/circle.png"></a>
-            <a href="#section-4" id="anchor4" class="anchor hvr-grow-shadow"><img src="imgs/circle.png"></a>
+            <a href="#intro" id="intro-anchor" class="anchor hvr-grow-shadow" span class="dot"></a>
+            <a href="#section-1" id="anchor1" class="anchor hvr-grow-shadow" span class="dot"></a>
+            <a href="#section-2" id="anchor2" class="anchor hvr-grow-shadow" span class="dot"></a>
+            <a href="#section-3" id="anchor3" class="anchor hvr-grow-shadow" span class="dot"></a>
+            <a href="#section-4" id="anchor4" class="anchor hvr-grow-shadow" span class="dot"></a>
+
+
+            <!-- The dots/circles -->
+            <!--
+                <div style="text-align:center">
+                    <span class="dot" onclick="currentSlide(1)"></span>
+                    <span class="dot" onclick="currentSlide(2)"></span>
+                    <span class="dot" onclick="currentSlide(3)"></span>
+                </div>
+-->
+
+
         </nav>
     </header>
     <!--    </div>-->
@@ -35,11 +49,29 @@
     <main class="full-screen" role="main">
         <section class="full-screen" id="intro">
             <div class="landing landing--hobbit" id="box1">
-                <div class="title title--start" id="">Web design <br> examples</div>
-                <img src="imgs/currentWebExample01.PNG" class="hobbit">
+                <div class="title title--start" id="">Abby Coleman<br>BFA New Media</div>
+                <img src="imgs/portrait.jpg" class="hobbit">
                 <div class="text text--start">
 
-                    Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam sit amet tempus mauris. Morbi lobortis, erat et finibus molestie, diam lectus porttitor massa, lobortis cursus leo mi in felis. Morbi varius justo non risus pharetra, vel sodales est interdum. Nullam tincidunt malesuada nibh eget feugiat. Praesent pulvinar varius ante. In hac habitasse platea dictumst. Nam a euismod magna. In ultricies placerat leo, quis efficitur neque feugiat et. Sed sodales nisl et tortor scelerisque bibendum.
+                    <b>Biography</b><br>
+                    Abby Coleman is a 4th year student at the University of Lethbridge in Alberta, Canada,
+                    majoring in a BFA New Media with a minor in General Management. Abby has an interest in
+                    continuously learning about computer programs and technologies that forward Web design
+                    aesthetics and functions. Abby has studied a varied roster of classes within this degree, which
+                    has made her capable and amenable to many different tools to create design. A few of the
+                    projects Abby has collaborated on have appeared in the works of students on the University of
+                    Lethbridge website.
+                    <br><b>Artist Statement</b><br>
+                    I grew up in a household that encourages art in the workplace, the integration of
+                    beautiful design into everyday life. I chose to attend the University of Lethbridge’s New Media
+                    degree because it has a system of training artists to be adaptable to different mediums. My
+                    intention when entering this degree was to go into video game production but fell in love with
+                    the communicative and expressive design of the Web. I want to learn more about web coding
+                    languages to enhance my understanding of art and design, something that will be advancing as
+                    fast as the internet advances. I want to use my extensive skill set that I acquired from this
+                    degree to become important in a workplace I earn a career in. I am inspired by artists that are
+                    constantly learning the rules of design and how to break them in order to display their vision in
+                    a more creative manner.
 
                 </div>
             </div>
@@ -48,12 +80,10 @@
         <section class="full-screen" id="section-1">
             <div class="landing landing--ring">
                 <div class="text text--ring">
-
-                    Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam sit amet tempus mauris. Morbi lobortis, erat et finibus molestie, diam lectus porttitor massa, lobortis cursus leo mi in felis. Morbi varius justo non risus pharetra, vel sodales est interdum. Nullam tincidunt malesuada nibh eget feugiat. Praesent pulvinar varius ante. In hac habitasse platea dictumst. Nam a euismod magna. In ultricies placerat leo, quis efficitur neque feugiat et. Sed sodales nisl et tortor scelerisque bibendum.
-
+                    <quote><a href="https://abbycoleman.wixsite.com/amazonia">Welcome to the Amazonia! Where the creatures you find deep in the jungle are based purely on the imagination. Each round a judge will pick up a prompt card and the rest of the players get to create an animal based on the prompt. The winner gets to move ahead on the board, so gather some willing participants and welcome to the jungle! </a></quote>
                 </div>
                 <img src="imgs/amazonia-board2.jpg" class="ring">
-                <div class="title title--ring">the One Ring</div>
+                <div class="title title--ring">graphic design</div>
             </div>
         </section>
 
@@ -65,16 +95,77 @@
 
                 </div>
                 <img src="imgs/currentWebExample03.PNG" class="orc">
-                <div class="title title--orc">they were once<br> elves</div>
+                <!--
+                <img src="imgs/currentWebExample03.PNG" class="web--two">
+-->
+                <div class="title title--orc">more webdev<br>app dev</div>
+
             </div>
         </section>
 
         <section class="full-screen" id="section-3">
             <div class="landing landing--troll">
 
-                <img src="imgs/photogrpahy.JPG" class="troll">
+                <!-- Slideshow container -->
+                <div class="slideshow-container">
 
-                <div class="title troll--title">Trolls Cooking<br>Dwarves</div>
+                    <!-- Full-width images with number and caption text -->
+                    <div class="mySlides fade">
+                        <!--                        <div class="numbertext">1 / 3</div>-->
+                        <img src="imgs/slide1-01.png" class="slideshow">
+                        <div class="text">Caption Text</div>
+                    </div>
+
+                    <div class="mySlides fade">
+                        <!--                        <div class="numbertext">2 / 3</div>-->
+                        <img src="imgs/slide2-01.png" class="slideshow">
+                        <div class="text">Caption Two</div>
+                    </div>
+
+                    <div class="mySlides fade">
+                        <!--                        <div class="numbertext">3 / 3</div>-->
+                        <img src="imgs/slide3-01.png" class="slideshow">
+                        <div class="text">Caption Three</div>
+                    </div>
+
+                    <div class="mySlides fade">
+                        <!--                        <div class="numbertext">3 / 3</div>-->
+                        <img src="imgs/slide4-01.png" class="slideshow">
+                        <div class="text">Caption Three</div>
+                    </div>
+                    <div class="mySlides fade">
+                        <!--                        <div class="numbertext">3 / 3</div>-->
+                        <img src="imgs/slide5-01.png" class="slideshow">
+                        <div class="text">Caption Three</div>
+                    </div>
+                    <div class="mySlides fade">
+                        <!--                        <div class="numbertext">3 / 3</div>-->
+                        <img src="imgs/slide6-01.png" class="slideshow">
+                        <div class="text">Caption Three</div>
+                    </div>
+                    <div class="mySlides fade">
+                        <!--                        <div class="numbertext">3 / 3</div>-->
+                        <img src="imgs/slide7-01.png" class="slideshow">
+                        <div class="text">Caption Three</div>
+                    </div>
+
+
+                    <!-- Next and previous buttons -->
+                    <a class="prev" onclick="plusSlides(-1)">&#10094;</a>
+                    <a class="next" onclick="plusSlides(1)">&#10095;</a>
+                </div>
+                <br>
+
+                <!-- The dots/circles -->
+                <!--
+                <div style="text-align:center">
+                    <span class="dot" onclick="currentSlide(1)"></span>
+                    <span class="dot" onclick="currentSlide(2)"></span>
+                    <span class="dot" onclick="currentSlide(3)"></span>
+                </div>
+-->
+
+                <div class="title troll--title">photography<br>examples</div>
 
             </div>
         </section>
@@ -82,9 +173,9 @@
         <section class="full-screen" id="section-4">
             <div class="landing landing--md">
                 <img src="imgs/currentWebExample01.PNG" class="mountdoom">
-                <div class="title title--md">Mount Doom</div>
+                <div class="title title--md">graphic design</div>
                 <div class="text text--md">
-                    Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam sit amet tempus mauris. Morbi lobortis, erat et finibus molestie, diam lectus porttitor massa, lobortis cursus leo mi in felis. Morbi varius justo non risus pharetra, vel sodales est interdum. Nullam tincidunt malesuada nibh eget feugiat. Praesent pulvinar varius ante. In hac habitasse platea dictumst. Nam a euismod magna. In ultricies placerat leo, quis efficitur neque feugiat et. Sed sodales nisl et tortor scelerisque bibendum.
+                    Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam sit amet tempus mauris. Morbi lobortis, erat et finibus molestie, diam lectus porttitor massa, lobortis cursus leo mi in.
                 </div>
             </div>
         </section>
@@ -92,13 +183,15 @@
 
     <!--    <div class="parallax"></div>-->
 
+
     <!--
     <script src="//cdnjs.cloudflare.com/ajax/libs/ScrollMagic/2.0.7/ScrollMagic.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.0.1/gsap.min.js"></script>
     <script src="//cdnjs.cloudflare.com/ajax/libs/ScrollMagic/2.0.7/plugins/debug.addIndicators.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/ScrollMagic/2.05/plugins/animation.gsap.js"></script>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.4/jquery.min.js"></script>
-    <script src="js/scripts.js"></script>
-    <script src="js/extra.js"></script>
 -->
+    <script src="js/scripts.js"></script>
+    <!--    <script src="js/extra.js"></script>-->
+
 </body></html>
